@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace database_project
+{
+    public partial class teacherScoreInput : System.Windows.Forms.Form
+    {
+        public teacherScoreInput()
+        {
+            InitializeComponent();
+        }
+
+        private void confirmInput_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
