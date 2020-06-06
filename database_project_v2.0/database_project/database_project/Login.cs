@@ -42,7 +42,7 @@ namespace database_project
                 string pwd = passwordBox.Text.Trim();
                 string sql;
                 SqlConnection con = new SqlConnection(connectionString);//创建-个数据库连接
-                if (id[0] != '1')
+                if (id[0] != '3')
                 {
                     MessageBox.Show("Your ID is invalid! Try AGAIN.");
                     passwordBox.Text = "";
@@ -50,7 +50,7 @@ namespace database_project
                 }
                 else
                 {
-                    sql = "select * from users where uid = " + id + " and upasswd = " + pwd + " and ugroup = 1";
+                    sql = "select * from users where uid = " + id + " and upasswd = " + pwd + " and ugroup = 3";
 
                     SqlCommand cmd = new SqlCommand(sql, con); //执行语句
                     try
@@ -65,9 +65,9 @@ namespace database_project
                         }
                         else
                         {
-                                Admin childrenForm = new Admin();
-                                childrenForm.Owner = this;
-                                childrenForm.Show();
+                            Student childrenForm = new Student(id);
+                            childrenForm.Owner = this;
+                            childrenForm.Show();
                         }
                     }
                     catch (SqlException e1)//抛出异常
@@ -150,7 +150,7 @@ namespace database_project
                 string pwd = passwordBox.Text.Trim();
                 string sql;
                 SqlConnection con = new SqlConnection(connectionString);//创建-个数据库连接
-                if (id[0] != '3')
+                if (id[0] != '1')
                 {
                     MessageBox.Show("Your ID is invalid! Try AGAIN.");
                     passwordBox.Text = "";
@@ -158,7 +158,7 @@ namespace database_project
                 }
                 else
                 {
-                    sql = "select * from users where uid = " + id + " and upasswd = " + pwd + " and ugroup = 3";
+                    sql = "select * from users where uid = " + id + " and upasswd = " + pwd + " and ugroup = 1";
 
                     SqlCommand cmd = new SqlCommand(sql, con); //执行语句
                     try
@@ -173,9 +173,9 @@ namespace database_project
                         }
                         else
                         {
-                                Student childrenForm = new Student();
-                                childrenForm.Owner = this;
-                                childrenForm.Show();                            
+                            Admin childrenForm = new Admin();
+                            childrenForm.Owner = this;
+                            childrenForm.Show();                           
                         }
                     }
                     catch (SqlException e1)//抛出异常

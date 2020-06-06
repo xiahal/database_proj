@@ -82,12 +82,13 @@
             this.passwordBox.Location = new System.Drawing.Point(303, 288);
             this.passwordBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '#';
             this.passwordBox.Size = new System.Drawing.Size(241, 28);
             this.passwordBox.TabIndex = 4;
             // 
             // studentLoginButton
             // 
-            this.studentLoginButton.Location = new System.Drawing.Point(67, 382);
+            this.studentLoginButton.Location = new System.Drawing.Point(528, 382);
             this.studentLoginButton.Margin = new System.Windows.Forms.Padding(2);
             this.studentLoginButton.Name = "studentLoginButton";
             this.studentLoginButton.Size = new System.Drawing.Size(166, 39);
@@ -109,7 +110,7 @@
             // 
             // managerLoginButton
             // 
-            this.managerLoginButton.Location = new System.Drawing.Point(517, 382);
+            this.managerLoginButton.Location = new System.Drawing.Point(54, 382);
             this.managerLoginButton.Margin = new System.Windows.Forms.Padding(2);
             this.managerLoginButton.Name = "managerLoginButton";
             this.managerLoginButton.Size = new System.Drawing.Size(166, 39);
