@@ -138,6 +138,26 @@ as
 DELETE FROM users
 where uid = (select deleted.sid from deleted);
 
+--课程表
+--删除时对授课表
+go
+create trigger tgr_crs_tea_delete
+on courses
+for delete
+as
+DELETE FROM costea
+where cid = (select deleted.cid from deleted);
+drop trigger tgr_crs_tea_delete
+--删除时对选课表
+go
+create trigger tgr_crs_chs_delete
+on courses
+for delete
+as
+DELETE FROM choices
+where cid = (select deleted.cid from deleted);
+drop trigger tgr_crs_chs_delete
+
 --测试表项
 select * from admins;
 select * from teachers;
@@ -281,8 +301,76 @@ as
  order by courses.cid
  return;
  
+ create procedure sp_TeacherQuery_with_cid_sid
+ @sid varchar(30),
+ @cid varchar(30)
+as 
+ select CONVERT(varchar(30),COUNT(*)) choicenum, CONVERT(varchar(30),AVG(cscore))  avgscore 
+ from choices,students,courses 
+ where students.sid = choices.sid 
+ and courses.cid = choices.cid 
+ and students.sid = @sid
+ and courses.cid = @cid
+ return;
+ 
+ create procedure sp_TeacherQuery_with_cid_sid_all
+ @sid varchar(30),
+ @cid varchar(30)
+as 
+  select distinct students.sid 学号, sname 姓名, cname 课程名, cscore 分数 
+ from choices,students,courses 
+ where students.sid = choices.sid 
+ and courses.cid = choices.cid 
+ and students.sid = @sid
+ and courses.cid = @cid
+ return;
+
+ create procedure sp_TeacherQuery_with_cid
+ @cid varchar(30)
+as  
+ select CONVERT(varchar(30),COUNT(*)) choicenum, CONVERT(varchar(30),AVG(cscore))  avgscore 
+ from choices,students,courses 
+ where students.sid = choices.sid 
+ and courses.cid = choices.cid and courses.cid = @cid
+ return;
+ 
+ create procedure sp_TeacherQuery_with_cid_all
+ @cid varchar(30)
+as 
+ select distinct students.sid 学号, sname 姓名, cname 课程名, cscore 分数 
+ from choices,students,courses 
+ where students.sid = choices.sid 
+ and courses.cid = choices.cid 
+ and courses.cid = @cid
+ return;
+
+ create procedure sp_TeacherQuery_with_sid
+ @sid varchar(30)
+as 
+ select CONVERT(varchar(30),COUNT(*)) choicenum, CONVERT(varchar(30),AVG(cscore))  avgscore 
+ from choices,students,courses 
+ where students.sid = choices.sid 
+ and courses.cid = choices.cid 
+ and students.sid = @sid
+ return
+
+ create procedure sp_TeacherQuery_with_sid_all
+ @sid varchar(30)
+as  
+ select distinct students.sid 学号, sname 姓名, cname 课程名, cscore 分数 
+ from choices,students,courses 
+ where students.sid = choices.sid 
+ and courses.cid = choices.cid 
+ and students.sid = @sid
+ return;
+ 
  drop procedure sp_StudentQuery_all_with_cid
  drop procedure sp_StudentQuery_all
  drop procedure sp_StudentQuery_with_cid
  drop procedure sp_StudentQuery
- 
+ drop procedure sp_TeacherQuery_with_cid_sid
+ drop procedure sp_TeacherQuery_with_cid_sid_all
+ drop procedure sp_TeacherQuery_with_cid
+ drop procedure sp_TeacherQuery_with_cid_all
+ drop procedure sp_TeacherQuery_with_sid
+ drop procedure sp_TeacherQuery_with_sid_all

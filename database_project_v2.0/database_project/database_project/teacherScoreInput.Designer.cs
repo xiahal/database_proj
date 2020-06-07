@@ -47,114 +47,128 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(103, 117);
+            this.label1.Location = new System.Drawing.Point(77, 88);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "课程号：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(103, 199);
+            this.label2.Location = new System.Drawing.Point(77, 149);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 24);
+            this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "学生号：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(127, 281);
+            this.label3.Location = new System.Drawing.Point(95, 211);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 24);
+            this.label3.Size = new System.Drawing.Size(62, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "成绩：";
             // 
             // studentIdBox
             // 
-            this.studentIdBox.Location = new System.Drawing.Point(261, 196);
+            this.studentIdBox.Location = new System.Drawing.Point(196, 147);
+            this.studentIdBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.studentIdBox.Name = "studentIdBox";
-            this.studentIdBox.Size = new System.Drawing.Size(256, 35);
+            this.studentIdBox.Size = new System.Drawing.Size(193, 28);
             this.studentIdBox.TabIndex = 4;
             // 
             // studentScoreBox
             // 
-            this.studentScoreBox.Location = new System.Drawing.Point(261, 278);
+            this.studentScoreBox.Location = new System.Drawing.Point(196, 208);
+            this.studentScoreBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.studentScoreBox.Name = "studentScoreBox";
-            this.studentScoreBox.Size = new System.Drawing.Size(256, 35);
+            this.studentScoreBox.Size = new System.Drawing.Size(193, 28);
             this.studentScoreBox.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(79, 490);
+            this.label4.Location = new System.Drawing.Point(59, 368);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 24);
+            this.label4.Size = new System.Drawing.Size(98, 18);
             this.label4.TabIndex = 6;
             this.label4.Text = "最近录入：";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(306, 431);
+            this.label5.Location = new System.Drawing.Point(230, 323);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 24);
+            this.label5.Size = new System.Drawing.Size(62, 18);
             this.label5.TabIndex = 7;
             this.label5.Text = "课程号";
             // 
             // classIdBox
             // 
             this.classIdBox.FormattingEnabled = true;
-            this.classIdBox.Location = new System.Drawing.Point(261, 109);
+            this.classIdBox.Location = new System.Drawing.Point(196, 82);
+            this.classIdBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.classIdBox.Name = "classIdBox";
-            this.classIdBox.Size = new System.Drawing.Size(256, 32);
+            this.classIdBox.Size = new System.Drawing.Size(193, 26);
             this.classIdBox.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(520, 431);
+            this.label6.Location = new System.Drawing.Point(390, 323);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 24);
+            this.label6.Size = new System.Drawing.Size(62, 18);
             this.label6.TabIndex = 9;
             this.label6.Text = "学生号";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(750, 431);
+            this.label7.Location = new System.Drawing.Point(562, 323);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 24);
+            this.label7.Size = new System.Drawing.Size(44, 18);
             this.label7.TabIndex = 10;
             this.label7.Text = "成绩";
             // 
             // lastClassIdBox
             // 
-            this.lastClassIdBox.Location = new System.Drawing.Point(261, 487);
+            this.lastClassIdBox.Location = new System.Drawing.Point(196, 365);
+            this.lastClassIdBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lastClassIdBox.Name = "lastClassIdBox";
-            this.lastClassIdBox.Size = new System.Drawing.Size(176, 35);
+            this.lastClassIdBox.Size = new System.Drawing.Size(133, 28);
             this.lastClassIdBox.TabIndex = 11;
             // 
             // lastStudentIdBox
             // 
-            this.lastStudentIdBox.Location = new System.Drawing.Point(475, 487);
+            this.lastStudentIdBox.Location = new System.Drawing.Point(356, 365);
+            this.lastStudentIdBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lastStudentIdBox.Name = "lastStudentIdBox";
-            this.lastStudentIdBox.Size = new System.Drawing.Size(176, 35);
+            this.lastStudentIdBox.Size = new System.Drawing.Size(133, 28);
             this.lastStudentIdBox.TabIndex = 12;
             // 
             // lastStudentScoreBox
             // 
-            this.lastStudentScoreBox.Location = new System.Drawing.Point(693, 487);
+            this.lastStudentScoreBox.Location = new System.Drawing.Point(520, 365);
+            this.lastStudentScoreBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lastStudentScoreBox.Name = "lastStudentScoreBox";
-            this.lastStudentScoreBox.Size = new System.Drawing.Size(176, 35);
+            this.lastStudentScoreBox.Size = new System.Drawing.Size(133, 28);
             this.lastStudentScoreBox.TabIndex = 13;
             // 
             // confirmInputButton
             // 
-            this.confirmInputButton.Location = new System.Drawing.Point(649, 278);
+            this.confirmInputButton.Location = new System.Drawing.Point(487, 208);
+            this.confirmInputButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmInputButton.Name = "confirmInputButton";
-            this.confirmInputButton.Size = new System.Drawing.Size(150, 35);
+            this.confirmInputButton.Size = new System.Drawing.Size(112, 26);
             this.confirmInputButton.TabIndex = 14;
             this.confirmInputButton.Text = "确认";
             this.confirmInputButton.UseVisualStyleBackColor = true;
@@ -162,9 +176,9 @@
             // 
             // teacherScoreInput
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 679);
+            this.ClientSize = new System.Drawing.Size(730, 509);
             this.Controls.Add(this.confirmInputButton);
             this.Controls.Add(this.lastStudentScoreBox);
             this.Controls.Add(this.lastStudentIdBox);
@@ -179,6 +193,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "teacherScoreInput";
             this.Text = "成绩录入";
             this.ResumeLayout(false);
@@ -192,7 +207,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox studentIdBox;
-        private System.Windows.Forms.TextBox studentScoreBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox classIdBox;
@@ -202,5 +216,6 @@
         private System.Windows.Forms.TextBox lastStudentIdBox;
         private System.Windows.Forms.TextBox lastStudentScoreBox;
         private System.Windows.Forms.Button confirmInputButton;
+        private System.Windows.Forms.TextBox studentScoreBox;
     }
 }

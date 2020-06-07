@@ -118,7 +118,7 @@ namespace database_project
                         }
                         else
                         {
-                                Teacher childrenForm = new Teacher();
+                                Teacher childrenForm = new Teacher(id);
                                 childrenForm.Owner = this;
                                 childrenForm.Show();                            
                         }
@@ -173,7 +173,7 @@ namespace database_project
                         }
                         else
                         {
-                            Admin childrenForm = new Admin();
+                            Admin childrenForm = new Admin(id);
                             childrenForm.Owner = this;
                             childrenForm.Show();                           
                         }

@@ -39,66 +39,74 @@
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(395, 500);
+            this.confirmButton.Location = new System.Drawing.Point(296, 375);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(188, 58);
+            this.confirmButton.Size = new System.Drawing.Size(141, 44);
             this.confirmButton.TabIndex = 35;
             this.confirmButton.Text = "确认修改";
             this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // gradeBox
             // 
-            this.gradeBox.Location = new System.Drawing.Point(464, 309);
+            this.gradeBox.Location = new System.Drawing.Point(348, 232);
+            this.gradeBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gradeBox.Name = "gradeBox";
-            this.gradeBox.Size = new System.Drawing.Size(274, 35);
+            this.gradeBox.Size = new System.Drawing.Size(206, 28);
             this.gradeBox.TabIndex = 34;
             // 
             // classNumBox
             // 
-            this.classNumBox.Location = new System.Drawing.Point(464, 213);
+            this.classNumBox.Location = new System.Drawing.Point(348, 160);
+            this.classNumBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.classNumBox.Name = "classNumBox";
-            this.classNumBox.Size = new System.Drawing.Size(274, 35);
+            this.classNumBox.Size = new System.Drawing.Size(206, 28);
             this.classNumBox.TabIndex = 33;
             // 
             // studentNumBox
             // 
-            this.studentNumBox.Location = new System.Drawing.Point(464, 120);
+            this.studentNumBox.Location = new System.Drawing.Point(348, 90);
+            this.studentNumBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.studentNumBox.Name = "studentNumBox";
-            this.studentNumBox.Size = new System.Drawing.Size(274, 35);
+            this.studentNumBox.Size = new System.Drawing.Size(206, 28);
             this.studentNumBox.TabIndex = 32;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(236, 312);
+            this.label3.Location = new System.Drawing.Point(177, 234);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 24);
+            this.label3.Size = new System.Drawing.Size(62, 18);
             this.label3.TabIndex = 31;
             this.label3.Text = "成绩：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(236, 216);
+            this.label2.Location = new System.Drawing.Point(177, 162);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 24);
+            this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 30;
             this.label2.Text = "课程号：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(236, 123);
+            this.label1.Location = new System.Drawing.Point(177, 92);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 24);
+            this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 29;
             this.label1.Text = "学号：";
             // 
             // adminScManageChange
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 679);
+            this.ClientSize = new System.Drawing.Size(730, 509);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.gradeBox);
             this.Controls.Add(this.classNumBox);
@@ -106,6 +114,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "adminScManageChange";
             this.Text = "修改选课";
             this.ResumeLayout(false);

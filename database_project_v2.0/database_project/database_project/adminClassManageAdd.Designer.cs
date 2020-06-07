@@ -39,66 +39,74 @@
             // 
             // teacherBox
             // 
-            this.teacherBox.Location = new System.Drawing.Point(462, 360);
+            this.teacherBox.Location = new System.Drawing.Point(346, 270);
+            this.teacherBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.teacherBox.Name = "teacherBox";
-            this.teacherBox.Size = new System.Drawing.Size(274, 35);
+            this.teacherBox.Size = new System.Drawing.Size(206, 28);
             this.teacherBox.TabIndex = 11;
             // 
             // classNameBox
             // 
-            this.classNameBox.Location = new System.Drawing.Point(462, 264);
+            this.classNameBox.Location = new System.Drawing.Point(346, 198);
+            this.classNameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.classNameBox.Name = "classNameBox";
-            this.classNameBox.Size = new System.Drawing.Size(274, 35);
+            this.classNameBox.Size = new System.Drawing.Size(206, 28);
             this.classNameBox.TabIndex = 10;
             // 
             // classNumBox
             // 
-            this.classNumBox.Location = new System.Drawing.Point(462, 171);
+            this.classNumBox.Location = new System.Drawing.Point(346, 128);
+            this.classNumBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.classNumBox.Name = "classNumBox";
-            this.classNumBox.Size = new System.Drawing.Size(274, 35);
+            this.classNumBox.Size = new System.Drawing.Size(206, 28);
             this.classNumBox.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(210, 363);
+            this.label3.Location = new System.Drawing.Point(158, 272);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 24);
+            this.label3.Size = new System.Drawing.Size(98, 18);
             this.label3.TabIndex = 8;
             this.label3.Text = "授课教师：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(234, 267);
+            this.label2.Location = new System.Drawing.Point(176, 200);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 24);
+            this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 7;
             this.label2.Text = "课程名：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(234, 174);
+            this.label1.Location = new System.Drawing.Point(176, 130);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 6;
             this.label1.Text = "课程号：";
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(395, 543);
+            this.confirmButton.Location = new System.Drawing.Point(296, 407);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(188, 58);
+            this.confirmButton.Size = new System.Drawing.Size(141, 44);
             this.confirmButton.TabIndex = 12;
             this.confirmButton.Text = "确认添加";
             this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // adminClassManageAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 679);
+            this.ClientSize = new System.Drawing.Size(730, 509);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.teacherBox);
             this.Controls.Add(this.classNameBox);
@@ -106,6 +114,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "adminClassManageAdd";
             this.Text = "课程新增";
             this.ResumeLayout(false);

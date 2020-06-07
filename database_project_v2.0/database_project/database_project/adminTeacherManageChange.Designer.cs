@@ -41,82 +41,92 @@
             // 
             // teacherMailBox
             // 
-            this.teacherMailBox.Location = new System.Drawing.Point(476, 396);
+            this.teacherMailBox.Location = new System.Drawing.Point(357, 297);
+            this.teacherMailBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.teacherMailBox.Name = "teacherMailBox";
-            this.teacherMailBox.Size = new System.Drawing.Size(274, 35);
+            this.teacherMailBox.Size = new System.Drawing.Size(206, 28);
             this.teacherMailBox.TabIndex = 39;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(224, 399);
+            this.label4.Location = new System.Drawing.Point(168, 299);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 24);
+            this.label4.Size = new System.Drawing.Size(98, 18);
             this.label4.TabIndex = 38;
             this.label4.Text = "新邮箱号：";
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(407, 500);
+            this.confirmButton.Location = new System.Drawing.Point(305, 375);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(188, 58);
+            this.confirmButton.Size = new System.Drawing.Size(141, 44);
             this.confirmButton.TabIndex = 37;
             this.confirmButton.Text = "确认修改";
             this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // teacherSalaryBox
             // 
-            this.teacherSalaryBox.Location = new System.Drawing.Point(476, 309);
+            this.teacherSalaryBox.Location = new System.Drawing.Point(357, 232);
+            this.teacherSalaryBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.teacherSalaryBox.Name = "teacherSalaryBox";
-            this.teacherSalaryBox.Size = new System.Drawing.Size(274, 35);
+            this.teacherSalaryBox.Size = new System.Drawing.Size(206, 28);
             this.teacherSalaryBox.TabIndex = 36;
             // 
             // teacherNumBox
             // 
-            this.teacherNumBox.Location = new System.Drawing.Point(476, 213);
+            this.teacherNumBox.Location = new System.Drawing.Point(357, 160);
+            this.teacherNumBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.teacherNumBox.Name = "teacherNumBox";
-            this.teacherNumBox.Size = new System.Drawing.Size(274, 35);
+            this.teacherNumBox.Size = new System.Drawing.Size(206, 28);
             this.teacherNumBox.TabIndex = 35;
             // 
             // teacherNameBox
             // 
-            this.teacherNameBox.Location = new System.Drawing.Point(476, 120);
+            this.teacherNameBox.Location = new System.Drawing.Point(357, 90);
+            this.teacherNameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.teacherNameBox.Name = "teacherNameBox";
-            this.teacherNameBox.Size = new System.Drawing.Size(274, 35);
+            this.teacherNameBox.Size = new System.Drawing.Size(206, 28);
             this.teacherNameBox.TabIndex = 34;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(248, 312);
+            this.label3.Location = new System.Drawing.Point(186, 234);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 24);
+            this.label3.Size = new System.Drawing.Size(80, 18);
             this.label3.TabIndex = 33;
             this.label3.Text = "新工资：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 216);
+            this.label2.Location = new System.Drawing.Point(186, 162);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 24);
+            this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 32;
             this.label2.Text = "新工号：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(248, 123);
+            this.label1.Location = new System.Drawing.Point(186, 92);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 31;
             this.label1.Text = "新姓名：";
             // 
             // adminTeacherManageChange
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 679);
+            this.ClientSize = new System.Drawing.Size(730, 509);
             this.Controls.Add(this.teacherMailBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.confirmButton);
@@ -126,6 +136,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "adminTeacherManageChange";
             this.Text = "修改教师";
             this.ResumeLayout(false);
