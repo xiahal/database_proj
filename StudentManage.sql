@@ -16,6 +16,7 @@ select * from admins;
 select * from teachers;
 select * from students;
 select * from users;
+select * from choices;
 */
 
 
@@ -54,7 +55,7 @@ CREATE TABLE users(
 	uid varchar(30) PRIMARY KEY,
 	upasswd varchar(30),
 	ugroup int,
-	CONSTRAINT chk_uid_gruop CHECK (ugroup = convert(int,SUBSTRING(uid,1,1)))
+	CONSTRAINT chk_uid_group CHECK (ugroup = convert(int,SUBSTRING(uid,1,1)))
 );
 
 --创建courses
@@ -67,17 +68,17 @@ CREATE TABLE courses(
 
 --创建choices
 CREATE TABLE choices(
-	sid varchar(30) FOREIGN KEY REFERENCES students(sid),
-	tid varchar(30) FOREIGN KEY REFERENCES teachers(tid),
-	cid varchar(30) FOREIGN KEY REFERENCES courses(cid),
+	sid varchar(30) FOREIGN KEY REFERENCES students(sid) ON DELETE CASCADE, 
+	tid varchar(30) FOREIGN KEY REFERENCES teachers(tid) ON DELETE CASCADE,
+	cid varchar(30) FOREIGN KEY REFERENCES courses(cid) ON DELETE CASCADE,
 	cscore int,
 	CONSTRAINT pk_choiceid PRIMARY KEY (sid,tid,cid)
 );
 
 --创建开课表
 CREATE TABLE costea(
-	cid varchar(30) FOREIGN KEY REFERENCES courses(cid),
-	tid varchar(30) FOREIGN KEY REFERENCES teachers(tid),
+	cid varchar(30) FOREIGN KEY REFERENCES courses(cid) ON DELETE CASCADE,
+	tid varchar(30) FOREIGN KEY REFERENCES teachers(tid) ON DELETE CASCADE,
 	CONSTRAINT pk_costea PRIMARY KEY (tid,cid)
 );
 
@@ -249,30 +250,58 @@ select * from choices;
 select * from costea;
 
 
---创建存储过程
+ ------------------------------4
+ --创建视图
+CREATE VIEW pwd_users 
+AS 
+SELECT *
+FROM  users;
+CREATE VIEW db_students
+AS 
+SELECT *
+FROM  students;
+CREATE VIEW db_courses
+AS 
+SELECT *
+FROM  courses;
+CREATE VIEW db_choices
+AS 
+SELECT *
+FROM  choices;
+CREATE VIEW db_teachers
+AS 
+SELECT *
+FROM  teachers;
+/*drop VIEW pwd_users
+drop VIEW db_courses
+drop VIEW db_choices
+drop VIEW db_teachers
+drop VIEW pwd_users*/
+
+
+ --创建存储过程
 create procedure sp_StudentQuery
  @sid varchar(30),
  @cterm varchar(30)
 as 
- select cterm as 学期,  courses.cid as 课程号, cname as 课程名, cpoint as 学分, cscore as 分数
- from courses, choices
- where courses.cid = choices.cid
- and choices.sid = @sid
- and courses.cterm = @cterm
- group by cterm, courses.cid, cname, cpoint, cscore
- order by courses.cid
- return;
- 
+ select cterm as 学期,  db_courses.cid as 课程号, cname as 课程名, cpoint as 学分, cscore as 分数
+ from db_courses, db_choices
+ where db_courses.cid = db_choices.cid
+ and db_choices.sid = @sid
+ and db_courses.cterm = @cterm
+ group by cterm, db_courses.cid, cname, cpoint, cscore
+ order by db_courses.cid
+ return; 
  
 create procedure sp_StudentQuery_all
  @sid varchar(30)
 as 
- select cterm as 学期,  courses.cid as 课程号, cname as 课程名, cpoint as 学分, cscore as 分数 
- from courses, choices
- where courses.cid = choices.cid
- and choices.sid = @sid
- group by cterm, courses.cid, cname, cpoint, cscore
- order by courses.cid
+ select cterm as 学期,  db_courses.cid as 课程号, cname as 课程名, cpoint as 学分, cscore as 分数 
+ from db_courses, db_choices
+ where db_courses.cid = db_choices.cid
+ and db_choices.sid = @sid
+ group by cterm, db_courses.cid, cname, cpoint, cscore
+ order by db_courses.cid
  return;
 
 create procedure sp_StudentQuery_with_cid
@@ -374,3 +403,51 @@ as
  drop procedure sp_TeacherQuery_with_cid_all
  drop procedure sp_TeacherQuery_with_sid
  drop procedure sp_TeacherQuery_with_sid_all
+ 
+ 
+ ------------------------------5
+ --设置登录名
+ exec sp_addlogin 'stu_users','123456'
+ exec sp_addlogin '管理员'
+ exec sp_addlogin '学生','123456'
+ exec sp_addlogin '教师','123456'
+
+--挂接用户名
+ exec sp_adduser 'stu_users','u1'
+ exec sp_adduser '管理员','a1'
+ exec sp_adduser '学生','s1'
+ exec sp_adduser '教师','t1'
+
+--管理员授权
+GRANT ALL PRIVILEGES ON Students TO a1;
+GRANT ALL PRIVILEGES ON admins TO a1;
+GRANT ALL PRIVILEGES ON choices TO a1;
+GRANT ALL PRIVILEGES ON costea TO a1;
+GRANT ALL PRIVILEGES ON courses TO a1;
+GRANT ALL PRIVILEGES ON teachers TO a1;
+GRANT ALL PRIVILEGES ON users TO a1;
+/*
+REVOKE ALL PRIVILEGES ON users FROM a1;
+*/
+
+--用户授权
+grant select on pwd_users to u1;
+GRANT UPDATE(upasswd), SELECT ON users TO u1;
+
+--学生授权
+grant select on db_students to s1;
+grant select on db_courses to s1;
+grant select on db_choices to s1;
+grant execute on sp_StudentQuery_all to s1;
+grant execute on sp_StudentQuery to s1;
+
+--教师授权
+grant select on db_teachers to t1;
+grant select on db_choices to t1;
+grant insert on choices to t1;
+grant execute on sp_TeacherQuery_with_cid_sid_all to t1;
+grant execute on sp_TeacherQuery_with_cid_sid to t1;
+grant execute on sp_TeacherQuery_with_cid_all to t1;
+grant execute on sp_TeacherQuery_with_cid to t1;
+grant execute on sp_TeacherQuery_with_sid_all to t1;
+grant execute on sp_TeacherQuery_with_sid to t1;
